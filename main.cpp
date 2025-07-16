@@ -32,8 +32,7 @@ const ll e30 = 1ll << 30, e60 = 1ll << 60;
 
 int main() {
     cin.tie(nullptr) -> sync_with_stdio(false);
-    
-    cout << "Hello World!\n";
+
 }
 
 // --------------------------------------------                    |\__/,|   (`\

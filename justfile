@@ -9,4 +9,10 @@ r:
     @./main
     @echo "\n----- execution done -----"
 
-bnr: b r
+br: b r
+
+c:
+    @xsel --clipboard < main.cpp
+
+h:
+    @hx main.cpp
