@@ -1,0 +1,105 @@
+template<class T> struct Matrix {
+    // @attributes
+    int n, m; T** elts;
+    T* operator[](const int &r_idx) { return elts[r_idx]; }
+ 
+    // @utils
+    void copy_elts(T** elts) {
+        rpt(i, 0, n) copy(elts[i], elts[i] + m, this->elts[i]);
+    }
+    void init_elts() {
+        elts = new T*[n];
+        rpt(i, 0, n) elts[i] = new T[m]();
+    }
+    void erase_elts() {
+        rpt(i, 0, n) delete[] elts[i];
+        delete[] elts;
+    }
+ 
+    // @constructors
+    Matrix(int n, int m): n(n), m(m) { init_elts(); }
+ 
+    Matrix(const initializer_list<initializer_list<T>> &elts) {
+        assert((n = elts.size()) != 0);
+        init_elts();
+ 
+        int i = 0;
+        for (auto &row : elts) {
+            m = row.size();
+            int j = 0;
+            for (auto &e : row) {
+                this->elts[i][j] = e;
+                j++;
+            }
+            i++;
+        }
+    }
+ 
+    Matrix(int n, int m, T** elts): n(n), m(m), elts(elts) {}
+
+    Matrix(const Matrix& other) : Matrix(other.n, other.m) {
+        copy_elts(other.elts);
+    }
+ 
+    Matrix(Matrix&& other) noexcept
+        : Matrix(other.n, other.m, other.elts) {
+        other.elts = nullptr;
+    }
+ 
+    // @destructor
+    ~Matrix() { if (elts) erase_elts(); }
+ 
+    // @assignments
+    Matrix& operator=(const Matrix& other) {
+        if (this != &other) {
+            erase_elts();
+            n = other.n;
+            m = other.m;
+            init_elts();
+            copy_elts(other.elts);
+        }
+        return *this;
+    }
+ 
+    Matrix& operator=(Matrix&& other) noexcept {
+        if (this != &other) {
+            erase_elts();
+            n = other.n;
+            m = other.m;
+            elts = other.elts;
+            other.elts = nullptr;
+        }
+        return *this;
+    }
+    
+    // @reading
+    friend istream& operator>>(istream &in, Matrix &mat) {
+        rpt(i, 0, mat.n) rpt (j, 0, mat.m) in >> mat[i][j];
+        return in;
+    }
+ 
+    // @operators
+    friend Matrix<T> operator*(const Matrix& a, const Matrix<T>& b) {
+        assert(a.m == b.n);
+        Matrix c(a.n, b.m);
+        rpt(i, 0, a.n) rpt(j, 0, b.m) rpt(k, 0, a.m) {
+            c[i][j] += a.elts[i][k] * b.elts[k][j];
+        }
+        return c;
+    }
+};
+
+#ifndef ONLINE_JUDGE
+template<class T> void __print(Matrix<T> x) {
+    cerr << "Matrix({\n";
+    rpt(i, 0, x.n) {
+        cerr << "  { ";
+        rpt(j, 0, x.m) {
+            __print(x.elts[i][j]);
+            if (j != x.m-1) cerr << ", ";
+        }
+        cerr << (i == x.n-1 ? " }\n" : " },\n");
+    }
+    cerr << "})";
+}
+#endif

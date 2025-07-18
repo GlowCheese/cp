@@ -2,17 +2,22 @@ default:
     @just --list --unsorted
 
 b:
-    @g++ main.cpp --std=c++17 -O2 -o main
+    @echo "• compiling main.cpp..."
+    @g++ main.cpp --std=c++20 -O2 -o main
 
 r:
-    @echo "---- executing ./main ----\n"
+    @echo "• executing ./main"
     @./main
-    @echo "\n----- execution done -----"
 
 br: b r
 
 c:
     @xsel --clipboard < main.cpp
+    @echo "• copied code to clipboard. all the best for your AC ❄"
 
 h:
     @hx main.cpp
+
+rn:
+    @cp template main.cpp
+    @echo "• renewed main.cpp. type 'just h' to open in helix"
