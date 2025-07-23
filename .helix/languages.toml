@@ -1,0 +1,7 @@
+[[language]]
+name = "cpp"
+file-types = ["cpp", "cc", "cxx", "h", "hpp", "hxx"]
+language-servers = ["clangd"]
+formatter = { command = "clang-format" }
+auto-format = false
+indent = { tab-width = 4, unit = "    " }
