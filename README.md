@@ -13,7 +13,8 @@ tailored for `C++` devs using `helix-editor`.
 ## installation:
 
 ```
-pip install -r requirements.txt
+python -m venv .venv
+.venv/bin/pip install -r requirements.txt
 ```
 
 > _more setup instructions coming soon._
