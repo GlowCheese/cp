@@ -18,6 +18,9 @@ c:
 h:
     @hx main.cpp
 
-rn:
+n:
     @cp template main.cpp
     @echo "• renewed main.cpp. type 'just h' to open in helix"
+
+as:
+    @./scripts/add_snippet.sh
