@@ -24,3 +24,12 @@ n:
 
 as:
     @./scripts/add_snippet.sh
+
+rs:
+    @./scripts/remove_snippet.sh
+
+ls:
+    @./scripts/list_snippets.sh
+
+ss:
+    @./scripts/show_snippet.sh

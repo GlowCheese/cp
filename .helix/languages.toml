@@ -3,7 +3,6 @@ name = "cpp"
 file-types = ["cpp", "cc", "cxx", "h", "hpp", "hxx"]
 language-servers = ["clangd", "hx-lsp"]
 formatter = { command = "clang-format" }
-auto-format = false
 indent = { tab-width = 4, unit = "    " }
 
 [language-server.hx-lsp]
@@ -16,3 +15,8 @@ formatter = { command = "black", args = ["-"] }
 
 [language-server.pyright.config.python.analysis]
 typeCheckingMode = "basic"
+
+[[language]]
+name = "bash"
+file-types = ["sh", "bash"]
+formatter = { command = "shfmt", args = ["-i", "2"] }
