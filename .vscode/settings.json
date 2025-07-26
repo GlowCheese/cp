@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.mdx": "html",
-        "*.css": "tailwindcss",
-        "iostream": "cpp",
-        "cmath": "cpp",
-        "initializer_list": "cpp"
-    }
-}
