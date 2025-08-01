@@ -1,2 +1,4 @@
 isort~=6.0.1
 rust-just~=1.42.4
+black~=25.1.0
+ruff~=0.12.5
