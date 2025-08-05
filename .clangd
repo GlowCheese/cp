@@ -1,0 +1,15 @@
+CompileFlags:
+  Add: [-fno-ms-extensions]
+  CompilationDatabase: None
+
+Index:
+  Background: Skip
+
+Diagnostics:
+  ClangTidy:
+    Add: []
+    Remove: [modernize-*, readability-*]
+    CheckOptions: {}
+
+Completion:
+  AllScopes: false

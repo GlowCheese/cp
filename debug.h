@@ -1,4 +1,40 @@
-#include <bits/stdc++.h>
+// Core input/output
+#include <iostream>
+#include <iomanip>
+#include <sstream>
+
+// Containers
+#include <vector>
+#include <array>
+#include <deque>
+#include <list>
+#include <set>
+#include <unordered_set>
+#include <map>
+#include <unordered_map>
+#include <stack>
+#include <queue>
+#include <bitset>
+
+// Utilities
+#include <algorithm>
+#include <functional>
+#include <utility>
+#include <numeric>
+#include <limits>
+#include <tuple>
+#include <optional>
+#include <any>
+#include <cassert>
+#include <cmath>
+#include <cstring>
+#include <string>
+#include <chrono>
+#include <random>
+
+// Others
+#include <cstdlib>
+#include <cctype>
 
 void __print(int x) { std::cerr << x; }
 void __print(long x) { std::cerr << x; }

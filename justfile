@@ -4,7 +4,7 @@ _default:
 # build main.cpp
 b:
     @echo "• compiling main.cpp..."
-    @g++ main.cpp --std=c++20 -O2 -o main
+    @/usr/bin/time -f "✓ Done in %e sec  -  used %P CPU" g++ main.cpp --std=c++20 -O2 -o main
 
 # run ./main
 r:
