@@ -17,4 +17,10 @@ python -m venv .venv
 .venv/bin/pip install -r requirements.txt
 ```
 
+## precompile debug.h:
+
+```
+g++ -std=c++20 -O2 -x c++-header debug.h
+```
+
 > _more setup instructions coming soon._
