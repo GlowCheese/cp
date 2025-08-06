@@ -16,7 +16,7 @@ using pii = pair<int, int>;
 
 template <class T> T read_() {
   T x;
-  std::cin >> x;
+  cin >> x;
   return x;
 }
 #define gint read_<int>()
@@ -52,7 +52,7 @@ int main() {
   if (!config::IS_INTERACTIVE)
     cin.tie(nullptr)->sync_with_stdio(false);
   if (config::FLOAT_PRECISION)
-    std::cout << std::fixed << std::setprecision(config::FLOAT_PRECISION);
+    cout << fixed << setprecision(config::FLOAT_PRECISION);
   int days_without_you = 1;
   if (config::MULTI_TESTS)
     cin >> days_without_you;
