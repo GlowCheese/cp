@@ -6,21 +6,25 @@ tailored for `C++` devs using `helix-editor`.
 
 ## prerequisites:
 
+- [uv](https://docs.astral.sh/uv/)
 - [helix](https://helix-editor.com/)
-- [python 3.13](https://www.python.org/)
-- [ubuntu 24.04](https://ubuntu.com/) (i never tested on other os, so... good luck lol.)
 
 ## installation:
 
-### create python venv:
+### sync project:
 ```
-python -m venv .venv
-.venv/bin/pip install -r requirements.txt
+uv sync
 ```
 
 ### install clangd & clang-format:
+**Ubuntu:**
 ```
 sudo apt install clangd clang-format
+```
+
+**Fedora:**
+```
+sudo dnf install clang-tools-extra
 ```
 
 ### install hx-lsp:
