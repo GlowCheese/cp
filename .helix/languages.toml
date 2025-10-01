@@ -3,7 +3,7 @@ name = "cpp"
 file-types = ["cpp", "cc", "cxx", "h", "hpp", "hxx"]
 language-servers = ["clangd", "hx-lsp"]
 formatter = { command = "clang-format" }
-indent = { tab-width = 4, unit = "    " }
+indent = { tab-width = 2, unit = "  " }
 
 [language-server.hx-lsp]
 command = "hx-lsp"
