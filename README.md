@@ -8,6 +8,7 @@ tailored for `C++` devs using `helix-editor`.
 
 - [uv](https://docs.astral.sh/uv/)
 - [helix](https://helix-editor.com/)
+- [rust](https://rust-lang.org/)
 
 ## installation:
 
@@ -29,15 +30,8 @@ sudo dnf install clang-tools-extra
 
 ### install hx-lsp:
 ```
-# install rust
-# ref: https://www.rust-lang.org/tools/install
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-. "$HOME/.cargo/env"
-
 cargo install --force hx-lsp
 ```
-
-> _more setup instructions coming soon._
 
 ## precompile debug.h:
 
