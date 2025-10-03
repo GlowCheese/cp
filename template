@@ -31,20 +31,19 @@ const ld eps = 0.000000001, pi = acos(-1);
 const ll e30 = 1ll << 30, e60 = 1ll << 60;
 
 namespace config {
-const bool MULTI_TESTS = 1;
-const bool IS_INTERACTIVE = 0;
-const int FLOAT_PRECISION = 0;
-} // namespace config
+  const bool MULTI_TESTS = 1;
+  const bool IS_INTERACTIVE = 0;
+  const int FLOAT_PRECISION = 0;
+}  // namespace config
 
 namespace glowo {
-auto solve(const int &tc) {
+  auto solve(const int &tc) {
 
-}
-} // namespace glowo
+  }
+}  // namespace glowo
 
 int main() {
-  if (!config::IS_INTERACTIVE)
-    cin.tie(nullptr)->sync_with_stdio(false);
+  if (!config::IS_INTERACTIVE) cin.tie(nullptr)->sync_with_stdio(false);
   if (config::FLOAT_PRECISION)
     cout << fixed << setprecision(config::FLOAT_PRECISION);
   rpt(tc, 0, config::MULTI_TESTS ? gint : 1) glowo::solve(tc);
