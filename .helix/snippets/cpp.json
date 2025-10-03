@@ -340,5 +340,30 @@
       "};"
     ],
     "description": "Simple Convex Hull Trick for line queries"
+  },
+  "trienode": {
+    "prefix": "trie",
+    "body": [
+      "struct TrieNode {",
+      "  int val;",
+      "  TrieNode *nxt[2];",
+      "",
+      "  TrieNode() : val(0) {",
+      "    nxt[0] = nullptr;",
+      "    nxt[1] = nullptr;",
+      "  }",
+      "",
+      "  bool has(const int &u) { return nxt[u] != nullptr; }",
+      "",
+      "  TrieNode *push(const int &u) {",
+      "    if (!has(u)) {",
+      "      nxt[u] = new TrieNode();",
+      "    }",
+      "    nxt[u]->val++;",
+      "    return nxt[u];",
+      "  }",
+      "};"
+    ],
+    "description": "Trie implementation with pointer"
   }
 }
