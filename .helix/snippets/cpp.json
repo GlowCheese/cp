@@ -365,5 +365,24 @@
       "};"
     ],
     "description": "Trie implementation with pointer"
+  },
+  "combinatorics": {
+    "prefix": "combinatorics",
+    "body": [
+      "namespace combi {",
+      "  const int N = 1e6 + 5;",
+      "",
+      "  mint f[N];",
+      "",
+      "  void preprocess() {",
+      "    f[0] = 1;",
+      "    rpt(i, 1, N) f[i] = f[i - 1] * i;",
+      "  }",
+      "",
+      "  mint nAk(int n, int k) { return f[n] / f[n - k]; }",
+      "  mint nCk(int n, int k) { return nAk(n, k) / f[k]; }",
+      "}  // namespace combi"
+    ],
+    "description": "Basic combinatorics operations"
   }
 }
