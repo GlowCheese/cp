@@ -36,5 +36,5 @@ cargo install --force hx-lsp
 ## precompile debug.h:
 
 ```
-g++ -std=c++20 -O2 -x c++-header debug.h
+g++ -std=c++20 -O2 -DEEBUG -x c++-header debug.h
 ```

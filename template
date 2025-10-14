@@ -1,8 +1,8 @@
-#ifdef ONLINE_JUDGE
+#ifdef EEBUG
+#include "debug.h"
+#else
 #include <bits/stdc++.h>
 #define debug(...) 17
-#else
-#include "debug.h"
 #endif
 using namespace std;
 
