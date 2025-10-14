@@ -55,7 +55,9 @@ def _add_snippet(name: str, desc: str, src: Optional[Path]):
 
         if name in data:
             print(f"! Snippet '{name}' already exists")
-            exit(1)
+            print("• Do you want to overwrite the existing snippet? (y/N) ", end="")
+            if input().lower() != "y":
+                exit(1)
 
         data[name] = {
             "prefix": name,
