@@ -50,6 +50,5 @@ int main() {
 }
 
 /* -------
-    Life can't be this beautiful
-        without your presence! ✨
+  too much dullness for my spaghetti
 */
