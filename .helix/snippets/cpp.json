@@ -7,7 +7,7 @@
       "  int n;",
       "  T *g, *f;",
       "",
-      "  FenTree(int n) : n(n) {",
+      "  FenTree(const int &n) : n(n) {",
       "    g = new T[n + 1]();",
       "    f = new T[n + 1]();",
       "  }",
@@ -19,14 +19,15 @@
       "    if (g) delete[] g;",
       "  }",
       "",
-      "  void reset() {",
-      "    rpt(i, 0, n) {",
+      "  void reset(int _n = -1) {",
+      "    if (_n != -1) n = _n;",
+      "    rpt(i, 1, n + 1) {",
       "      g[i] = T();",
       "      f[i] = T();",
       "    }",
       "  }",
       "",
-      "  void add(int i, T val) {",
+      "  void add(int i, const T &val) {",
       "    g[i] += val;",
       "    while (i <= n) {",
       "      f[i] += val;",
@@ -393,5 +394,30 @@
       "pair<int, T> lower_bound(T val) const { return upper_bound(val - 1); }"
     ],
     "description": "lower_bound & upper_bound on Fenwick Tree"
+  },
+  "compressor": {
+    "prefix": "compressor",
+    "body": [
+      "template <class T>",
+      "struct Compressor {",
+      "  vector<T> q;",
+      "  map<T, int> mp;",
+      " ",
+      "  Compressor() : q(1) {}",
+      " ",
+      "  void add(T x) { q.push_back(x); }",
+      "  void compress() {",
+      "    sort(q.begin() + 1, q.end());",
+      "    q.erase(unique(q.begin() + 1, q.end()), q.end());",
+      "    rpt(i, 1, q.size()) mp[q[i]] = i;",
+      "  }",
+      " ",
+      "  T &inv(const int &x) { return q[x]; }",
+      "  int size() const { return q.size() - 1; }",
+      "  int operator[](const T &x) { return mp[x]; }",
+      "  bool has(const T &x) const { return mp.count(x); }",
+      "};"
+    ],
+    "description": "1-index bi-directional numerical compressor"
   }
 }
