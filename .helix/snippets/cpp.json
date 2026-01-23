@@ -150,7 +150,9 @@
       "    return out;",
       "  }",
       "  friend void __print(Mint &x) { cerr << x; }",
-      "};"
+      "};",
+      "",
+      "using mint = Mint<mod>;"
     ],
     "description": "Modular int with fast arithmetic ops"
   },
@@ -486,5 +488,30 @@
       "};"
     ],
     "description": "Segment Tree that supports interval queries/updates"
+  },
+  "timer": {
+    "prefix": "timer",
+    "body": [
+      "template <class DT = chrono::milliseconds,",
+      "          class ClockT = chrono::steady_clock>",
+      "class Timer {",
+      "  using timep_t = typename ClockT::time_point;",
+      "  timep_t _start = ClockT::now(), _end = {};",
+      "",
+      " public:",
+      "  void tick() {",
+      "    _end = timep_t{};",
+      "    _start = ClockT::now();",
+      "  }",
+      "",
+      "  void tock() { _end = ClockT::now(); }",
+      "",
+      "  template <class T = DT>",
+      "  auto duration() const {",
+      "    return chrono::duration_cast<T>(_end - _start);",
+      "  }",
+      "};"
+    ],
+    "description": "Benchmarking code execution time"
   }
 }

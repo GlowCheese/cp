@@ -8,6 +8,7 @@ using namespace std;
 
 #define fi first
 #define se second
+#define elif else if
 
 // clang-format off
 using str = string; using pii = pair<int, int>;

@@ -38,3 +38,9 @@ cargo install --force hx-lsp
 ```
 g++ -std=c++20 -O2 -DEEBUG -x c++-header debug.h
 ```
+
+## create zed snippet soft-link:
+
+```
+ln -sf "$(pwd)/.helix/snippets/cpp.json" "$HOME/.config/zed/snippets/c++.json"
+```

@@ -1,5 +1,8 @@
 CompileFlags:
-  Add: [-fno-ms-extensions]
+  Add:
+    - "-fno-ms-extensions"
+    - "--include-directory=/usr/include/c++/13/"
+    - "--include-directory=/usr/include/x86_64-linux-gnu/c++/13/"
   CompilationDatabase: None
 
 Index:
